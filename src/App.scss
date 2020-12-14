@@ -1,0 +1,15 @@
+@import "./scss/utill/variable";
+@import "./scss/utill/util";
+@import "./scss/utill/function";
+@import "./scss/utill/mixin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  @include setBackgroundColor($primary);
+}

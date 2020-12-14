@@ -1,0 +1,5 @@
+@for $number from 1 to 10 {
+  .p-#{$number} {
+    padding: #{$number};
+  }
+}
