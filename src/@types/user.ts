@@ -3,8 +3,7 @@ export interface user {
   name: string;
   password: string;
   email: string;
+  isAdmin: boolean;
+  isBanned: boolean;
+  isLogedin: boolean;
 }
-
-export type userAction = {
-  type: "LogIn";
-};
