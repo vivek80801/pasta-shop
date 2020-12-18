@@ -1,17 +1,33 @@
 import React from "react";
 import { login } from "../../actions/userAction";
 import { useDispatch } from "react-redux";
+import Alert from "./Alert";
+import { Message } from "../../@types/message";
 
 const Login: React.FC = (): JSX.Element => {
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [mess, setMess] = React.useState<Message>({ message: "", err: false });
   const dispatch = useDispatch();
   return (
     <>
+      <Alert message={mess.message} err={mess.err} />
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(login(userName, password));
+          if (userName === "" || password === "") {
+            setMess({ message: "Please fill the form", err: true });
+            setTimeout(() => {
+              setMess({ message: "", err: false });
+            }, 5000);
+          } else {
+            setMess({ message: "You are logged in", err: false });
+            setMess({ message: "Please fill the form", err: true });
+            setTimeout(() => {
+              setMess({ message: "", err: false });
+            }, 5000);
+            dispatch(login(userName, password));
+          }
         }}
       >
         <label htmlFor="user-name">user name:</label>
