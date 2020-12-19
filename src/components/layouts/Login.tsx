@@ -6,47 +6,47 @@ import { Message } from "../../@types/message";
 import loginForm from "../../scss/layouts/login.module.scss";
 
 const Login: React.FC = (): JSX.Element => {
-  const [userName, setUserName] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [mess, setMess] = React.useState<Message>({ message: "", err: false });
-  const dispatch = useDispatch();
-  return (
-    <>
-      <Alert message={mess.message} err={mess.err} />
-      <form
-      className={loginForm.form}
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (userName === "" || password === "") {
-            setMess({ message: "Please fill the form", err: true });
-            setTimeout(() => {
-              setMess({ message: "", err: false });
-            }, 5000);
-          } else {
-            setMess({ message: "You are logged in", err: false });
-            setTimeout(() => {
-              setMess({ message: "", err: false });
-            }, 5000);
-            dispatch(login(userName, password));
-          }
-        }}
-      >
-        <label htmlFor="user-name">user name:</label>
-        <input
-          type="text"
-          placeholder="enter your username"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <label htmlFor="password">password:</label>
-        <input
-          type="password"
-          placeholder="enter your password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input type="submit" value="log in" className={"btn-danger"} />
-      </form>
-    </>
-  );
+	const [userName, setUserName] = React.useState("");
+	const [password, setPassword] = React.useState("");
+	const [mess, setMess] = React.useState<Message>({ message: "", err: false });
+	const dispatch = useDispatch();
+	return (
+		<>
+			<Alert message={mess.message} err={mess.err} />
+			<form
+				className={loginForm.form}
+				onSubmit={(e) => {
+					e.preventDefault();
+					if (userName === "" || password === "") {
+						setMess({ message: "Please fill the form", err: true });
+						setTimeout(() => {
+							setMess({ message: "", err: false });
+						}, 5000);
+					} else {
+						setMess({ message: "You are logged in", err: false });
+						setTimeout(() => {
+							setMess({ message: "", err: false });
+						}, 5000);
+						dispatch(login(userName, password));
+					}
+				}}
+			>
+				<label htmlFor="user-name">user name:</label>
+				<input
+					type="text"
+					placeholder="enter your username"
+					onChange={(e) => setUserName(e.target.value)}
+				/>
+				<label htmlFor="password">password:</label>
+				<input
+					type="password"
+					placeholder="enter your password"
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<input type="submit" value="log in" className={"btn-primary"} />
+			</form>
+		</>
+	);
 };
 
 export default Login;

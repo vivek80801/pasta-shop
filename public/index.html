@@ -11,12 +11,45 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+      .loading{
+        height: 100px;
+        width: 100px;
+        background-color: #0112ff;
+        color: #fff;
+        border-radius: 50%;
+        text-transform: capitalize;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 2s ease infinite;
+      }
+
+      .loading-parent{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @keyframes fadeIn {
+        0%{
+          opacity: 0;
+        }
+        100%{
+          opacity: 1;
+        }
+      }
+    </style>
     <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-      <div class="loading"></div>
+      <div class="loading-parent">
+        <div class="loading">loading</div>
+      </div>
     </div>
   </body>
 </html>

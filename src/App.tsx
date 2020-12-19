@@ -6,15 +6,15 @@ import Default from "./components/pages/Default";
 import { Switch, Route } from "react-router-dom";
 
 const App: React.FC = (): JSX.Element => {
-  return (
-    <>
-      <Navbar />
-      <Switch>
-        <Route exact path={"/"} component={Home} />
-        <Route exact component={Default} />
-      </Switch>
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<Switch>
+				<Route exact path={"/"} component={Home} />
+				<Route exact component={Default} />
+			</Switch>
+		</>
+	);
 };
 
 export default App;

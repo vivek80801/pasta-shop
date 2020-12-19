@@ -1,4 +1,29 @@
 @mixin setBackgroundColor($color) {
-  background-color: $color;
-  color: set-text-color($color);
+	background-color: $color;
+	color: set-text-color($color);
+}
+
+@mixin setBtn($color, $class) {
+	.btn-#{$class} {
+		@extend %btn;
+		@include setBackgroundColor(($color));
+	}
+
+	.btn-#{$class}:hover {
+		@include setBackgroundColor(lighten($color, 10));
+	}
+}
+
+@mixin setAlert($color, $class) {
+	.#{$class} {
+		@extend %alert;
+		color: $color;
+	}
+}
+
+@mixin setInput($color, $class){
+	.input-#{$class}{
+		@extend %input;
+		@include setBackgroundColor($color)
+	}
 }

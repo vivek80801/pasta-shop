@@ -1,53 +1,5 @@
-%btn{
-    padding:0.75rem;
-    border-radius: 0.75rem;
-    outline: none;
-    cursor: pointer;
-    border: none;
-}
-
-.btn-primary{
-    @extend %btn;
-    @include setBackgroundColor($primary);
-}
-
-.btn-primary:hover {
- @include setBackgroundColor(lighten($color: $primary, $amount: 10));    
-}
-
-.btn-secondary{
-    @extend %btn;
-    @include setBackgroundColor($secondary);
-}
-
-.btn-secondary:hover {
-    @include setBackgroundColor(lighten($color: $secondary, $amount:10));
-}
-
-.btn-sucess{
-    @extend %btn;
-    @include setBackgroundColor($sucess);
-}
-
-.btn-sucess:hover{
-    @include setBackgroundColor(lighten($color:$sucess, $amount:10))
-}
-
-.btn-danger{
-    @extend %btn;
-    @include setBackgroundColor($danger)
-}
-
-.btn-danger:hover{
-    @include setBackgroundColor(lighten($color:$danger, $amount:10))
-
-}
-
-.btn-warning{
-    @extend %btn;
-    @include setBackgroundColor($warning);
-}
-
-.btn-warning:hover{
-    @include setBackgroundColor(lighten($color:$warning, $amount:10));
-}
+@include setBtn($primary, primary);
+@include setBtn($secondary, secondary);
+@include setBtn($sucess, sucess);
+@include setBtn($danger, danger);
+@include setBtn($warning, warning);
