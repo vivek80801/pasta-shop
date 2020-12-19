@@ -3,6 +3,7 @@
 @import "./scss/utill/function";
 @import "./scss/utill/mixin";
 @import "./scss/utill/partial";
+@import "./scss/utill/buttons";
 
 * {
   padding: 0;
@@ -12,5 +13,4 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  @include setBackgroundColor($primary);
 }

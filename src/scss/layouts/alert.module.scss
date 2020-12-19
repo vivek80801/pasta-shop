@@ -1,0 +1,31 @@
+@import "../utill/mixin";
+@import "../utill/function";
+@import "../utill/variable";
+
+%alert{
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.danger {
+    @extend %alert;
+    color: $warning;
+}
+
+.sucess {
+    @extend %alert;
+    color: $sucess;
+}
+
+.primary {
+    @extend %alert;
+    color: $primary;
+}
+
+.secondary {
+    @extend %alert;
+    color: $secondary;
+}

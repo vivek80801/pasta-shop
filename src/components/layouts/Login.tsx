@@ -3,6 +3,7 @@ import { login } from "../../actions/userAction";
 import { useDispatch } from "react-redux";
 import Alert from "./Alert";
 import { Message } from "../../@types/message";
+import loginForm from "../../scss/layouts/login.module.scss";
 
 const Login: React.FC = (): JSX.Element => {
   const [userName, setUserName] = React.useState("");
@@ -13,6 +14,7 @@ const Login: React.FC = (): JSX.Element => {
     <>
       <Alert message={mess.message} err={mess.err} />
       <form
+      className={loginForm.form}
         onSubmit={(e) => {
           e.preventDefault();
           if (userName === "" || password === "") {
@@ -22,7 +24,6 @@ const Login: React.FC = (): JSX.Element => {
             }, 5000);
           } else {
             setMess({ message: "You are logged in", err: false });
-            setMess({ message: "Please fill the form", err: true });
             setTimeout(() => {
               setMess({ message: "", err: false });
             }, 5000);
@@ -34,17 +35,15 @@ const Login: React.FC = (): JSX.Element => {
         <input
           type="text"
           placeholder="enter your username"
-          required
           onChange={(e) => setUserName(e.target.value)}
         />
         <label htmlFor="password">password:</label>
         <input
           type="password"
           placeholder="enter your password"
-          required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" value="log in" />
+        <input type="submit" value="log in" className={"btn-danger"} />
       </form>
     </>
   );
