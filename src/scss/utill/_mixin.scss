@@ -24,6 +24,9 @@
 @mixin setInput($color, $class){
 	.input-#{$class}{
 		@extend %input;
-		@include setBackgroundColor($color)
+		@include setBackgroundColor($color);
+	}
+	.input-#{$class}::placeholder{
+		@include setBackgroundColor($color);
 	}
 }

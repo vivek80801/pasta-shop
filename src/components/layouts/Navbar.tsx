@@ -6,8 +6,13 @@ const Navbar: React.FC = (): JSX.Element => {
 		<nav className={navbar.navbar}>
 			<h1>logo</h1>
 			<ul>
-				<li>home</li>
+				<li>
+					<a href="/">home</a>
+				</li>
 				<li>about</li>
+				<li>
+					<a href="/product">product</a>
+				</li>
 			</ul>
 		</nav>
 	);

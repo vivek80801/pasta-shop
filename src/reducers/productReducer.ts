@@ -7,12 +7,12 @@ import {
 	EDITPRODUCT,
 	DELETEPRODUCT,
 } from "../actions/@types/productAction";
-import { Product } from "../@types/product";
+import { ProductI } from "../@types/product";
 
 const productReducer = (
-	state: Product[] = productItems,
+	state: ProductI[] = productItems,
 	action: productAction
-): Product[] => {
+): ProductI[] => {
 	switch (action.type) {
 		case ADDTOCART:
 			return [

@@ -1,5 +1,5 @@
 import users from "../data/users";
-import { user } from "../@types/user";
+import { UserI } from "../@types/user";
 import {
 	userAction,
 	LOGIN,
@@ -9,7 +9,7 @@ import {
 	DELETEACCOUNT,
 } from "../actions/@types/userActions";
 
-const userReducer = (state: user[] = users, action: userAction): user[] => {
+const userReducer = (state: UserI[] = users, action: userAction): UserI[] => {
 	switch (action.type) {
 		case LOGIN:
 			return [
